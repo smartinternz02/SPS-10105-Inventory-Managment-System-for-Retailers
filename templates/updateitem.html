@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVENTORY MANAGEMENT SYSTEM | UPDATE</title>
+	<style>
+	
+body {
+  background-image: url('/static/img/img24.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+        <!-- favicon -->
+        <!-- <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <!-- <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-32x32.png">
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <!-- css stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- font styles cdn -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="main-logo-img mt-3" href="#"><img src="/static/img/img1.jfif" alt="sheep-logo" height="90px" width="180px">
+                <!-- <a class="navbar-brand" href="index.html">JobPortal</a> -->
+              </a>
+			   
+			  <div class="row donate-sponsor">
+                <a type="button" class="btn btn-success mr-1" id="donate" href="logout ">LOGOUT</a>
+                <a type="button" class="btn btn-warning mr-1" id="sponsor" href="dashboard">DASHBOARD</a>
+				                <a type="button" class="btn btn-warning mr-1" id="sponsor" href="/display">MY STOCKS</a>
+                <a type="button" class="btn btn-primary mr-1" id="sponsor" href="about">CONTACT US</a>
+              </div>
+              
+            </div>
+          </nav>
+<body>
+
+{% block body %}
+
+<div class="container my-3" style=" height: 650px;">
+
+    <h2>Update the data here</h2>
+
+    <form action="/updateprod" method="POST">
+
+        <div class="mb-3 row">
+            
+            <div class="col-sm-4">
+			    <label for="id" class="col-sm-2 col-form-label">Inventory ID</label>
+                <input type="number" class="form-control" id="id" name="id"
+                    placeholder="Enter your Inventory ID" value="{{data.id}}">
+            </div>
+			
+			
+            <div class="col-sm-4">
+			    <label for="username" class="col-sm-2 col-form-label">User      Name</label>
+                <input type="text" class="form-control" id="username" name="username"
+                    placeholder="Enter the User name " value="{{data.username}}">
+            </div>
+			
+			
+            <div class="col-sm-4">
+			    <label for="proname" class="col-sm-2 col-form-label">Product Name</label>
+                <input type="text" class="form-control" id="proname" name="proname"
+                    placeholder="Enter the product Name " value="{{data.proname}}">
+            </div>
+        </div>
+
+
+
+        <div class="mb-3 row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="description" name="description"
+                    placeholder="Enter the product Description " value="{{data.description}}">
+            </div>
+        </div>
+
+
+        <div class="mb-3 row">
+            <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-4">
+                <input type="number" class="form-control" id="quantity" name="quantity"
+                    placeholder="Enter the total quantity of items in stock" value="{{data.quantity}}">
+            </div>
+			
+			<label for="price" class="col-sm-1 col-form-label">Price</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="price" name="price"
+                    placeholder="Enter the product unit  price " value="{{data.price}}">
+            </div>
+        </div>
+		
+		
+		
+
+
+        <div class="mb-3 row">
+            <label for="reord" class="col-sm-2 col-form-label">Reorder Level</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="reord" name="reord"
+                    placeholder="Enter the reoder level of the product" value="{{data.reord}}">
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

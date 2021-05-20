@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVENTORY MANAGEMENT | REGISTER</title>
+	<style>
+	form {
+	width:500px;
+  margin: auto;
+  border: 1px solid black;
+  background-color: lavender;
+}
+	
+body {
+  background-image: url('/static/img/img10.jfif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+        <!-- favicon -->
+        <!-- <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <!-- <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-32x32.png">
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <!-- css stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- font styles cdn -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
+</head>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="main-logo-img mt-3" href="#"><img src="/static/img/img1.jfif" alt="sheep-logo" height="90px" width="180px">
+                <!-- <a class="navbar-brand" href="index.html">JobPortal</a> -->
+              </a>
+              
+              <div class="row donate-sponsor">
+                <a type="button" class="btn btn-success mr-1" id="donate" href="/ ">HOME</a>
+                <a type="button" class="btn btn-warning mr-1" id="sponsor" href="login">LOGIN</a>
+                <a type="button" class="btn btn-primary mr-1" id="sponsor" href="contact">ABOUT US</a>
+              </div>
+            </div>
+          </nav>
+<body>
+    <!-- bootstrap navbar -->
+    
+        
+        <form action="/register" method="post">
+		<div class="logo mt-3 text-center">
+        <a class="main-logo-img mt-5" href="#"><img src="static/img/IMG7.png" alt="sheep-logo" height="100px" width="200px">
+            <!-- <a class="navbar-brand" href="index.html">JobPortal</a> -->
+          </a>
+    </div >
+      <!-- navbar ends -->
+    <!-- Login form -->
+    <div class="login text-center mt-5"> 
+		<div class="login text-center mt-5">
+		
+		<div class="msg">{{ msg1 }}</div>
+		
+		<h2> Register Form </h2>
+        
+            <!-- <input type="text" placeholder="fullname" id="fullname"> </br></br> -->
+            <label>Name : </label>
+            <input type="text" name="username" placeholder="Enter Your Username"  id="username" required></br></br>
+			<label>Email : </label>
+			<input type="email" name="email" placeholder="Enter Your Email ID"  id="email" required></br></br>
+			<label>Phone : </label>
+			<input type="phone" name="phone" placeholder="Enter Your Phone No"  id="phone" required></br></br>
+			<label>Address : </label>
+			<input type="address" name="address" placeholder="Enter Your Address"  id="address" required></br></br>
+			<label>Password : </label>
+			<input type="password" name="password" placeholder="Enter Your Password" id="password" required></br></br>
+			
+            </br>
+            </br>
+			
+        <button type="submit" id="button" class="btn btn-primary"> Register </button>
+		<div class="msg">{{ msg }}</div>
+		</div>
+
+    <div class="note mt-3 text-center"> <!--Register form -->
+    <p> Already have an account ? please login  <a href="/login">login! </a> </p>
+   
+    </div>
+	</div>
+	</div>
+        </form>
+    
+</body>
+</html>
+

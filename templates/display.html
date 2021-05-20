@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVENTORY MANAGEMANT| DISPLAY</title>
+       
+    <meta charset="UTF-8">
+	<style>
+    td {
+        background-color: rgb(226, 228, 229);
+        margin-bottom: .5rem;
+        border-bottom: 2px solid #fff;
+    }
+</style>
+        <!-- favicon -->
+        <!-- <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <!-- <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <link rel="icon" type="/image/png" sizes="16x16" href="/assets/img/favicon-32x32.png">
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <!-- css stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- font styles cdn -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- bootstrap navbar -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <!--<a class="main-logo-img mt-3" href="#"><img src="static/img/img11.jfif" alt="sheep-logo" height="50px" width="180px">-->
+                <!-- <a class="navbar-brand" href="index.html">JobPortal</a> -->
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+             
+              <div class="row donate-sponsor">
+                <a type="button" class="btn btn-success mr-1" id="donate" href="logout">LOGOUT</a>
+                <a type="button" class="btn btn-warning mr-1" id="sponsor" href="dashboard">DASHBOARD</a>
+                
+              </div>
+            </div>
+          </nav>
+          <!-- navbar ends -->
+
+        <!-- what we focus on -->
+        <div class="container my-2">
+
+    <!-- featured job -->
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+                Inventory Management System
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">ABC enterprises</h5>
+                <p class="card-text">Our entireprise is a wellknown and standard company, which provides easy management and satisifaction to its customers. 
+				Today’s organizations fail to realize the value of their customers when it comes to the success of their business.
+				Without customer loyalty the success of your business will always be uncertain.</p>
+                <a href="{{url_for('apply')}}" class="btn btn-primary">Add New Product</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-2 mx-1">
+        <h2>Inventory Table</h2>
+    <table style="width:110%">
+        <tr>
+            <th>Inventory ID</th>
+            <th>UserName</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price per product</th>
+            <th>Reorder limit</th>
+			
+        </tr>
+
+        {% for item in items %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5]}}</td>
+            <td>{{item[6]}}</td>
+            <td>{{item[7]}}</td>
+            <td>{{item[8]}}</td>
+			<td><a href="/updateitem/{{item[0]}}" class="btn btn-primary">Update</a></td>
+			<td><a href="/deleteitem/{{item[0]}}" class="btn btn-danger">Delete</a></td>
+			
+        </tr>
+        {% endfor %}
+
+    </table>
+	</br></br><div class="msg">{{ msg }}</div>
+
+    </div>
+
+</div>
+         
+</body>
+</html>
